@@ -1,0 +1,35 @@
+server:
+  port: 8002
+
+# 连接池配置
+spring:
+#  application:
+#    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://192.168.2.21/db2024
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: dev,prod
+#  cloud:
+#    consul:
+#      host: localhost
+#      port: 8500
+#      discovery:
+#        prefer-ip-address: true
+#        service-name: ${spring.application.name}
+
+
+
+
+# mybatis-plus的配置
+mybatis-plus:
+  type-aliases-package: com.atguigu.pojo
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted  #全局逻辑删除
+      id-type: auto #主键策略自增长
+      table-prefix: t_ # 设置表的前缀

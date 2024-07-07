@@ -1,0 +1,12 @@
+server:
+  port: 80
+
+# 连接池配置
+spring:
+  application:
+    name: cloud-order-service
+  cloud:
+    consul:
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}

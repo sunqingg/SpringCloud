@@ -1,0 +1,27 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-feign-order
+  cloud:
+    openfeign:
+      client:
+        config:
+          # default 设置的全局超时时间，指定服务名称可以设置单个服务的超时时间
+          default:
+            #连接超时时间
+            connectTimeout: 4000
+            #读取超时时间
+            readTimeout: 4000
+
+          # 为serviceC这个服务单独配置超时时间，单个配置的超时时间将会覆盖全局配置
+          cloud-payment-service:
+            #连接超时时间
+            connectTimeout: 2000
+            #读取超时时间
+            readTimeout: 2000
+    consul:
+      discovery:
+        prefer-ip-address: true #优先使用服务ip进行注册
+        service-name: ${spring.application.name}
