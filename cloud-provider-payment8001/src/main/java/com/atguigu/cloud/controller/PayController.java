@@ -56,25 +56,27 @@ public class PayController {
     }
     @RequestMapping("pay/get/{id}")
     public ResultData get(@PathVariable("id") int id){
-        try {
-            Thread.sleep(62000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(62000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         return payService.get(id);
     }
 
     @RequestMapping("pay/readConfig")
     public ResultData readConfig(@Value("${spring.info}") String info){
-        try {
-            Thread.sleep(62000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Thread.sleep(62000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         return ResultData.ok(info);
     }
     @RequestMapping("pay/get/info")
     public ResultData info(@Value("${spring.info}") String info){
         return ResultData.ok(info + "8001");
     }
+
+
 }

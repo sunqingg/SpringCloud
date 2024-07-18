@@ -18,6 +18,7 @@
     </properties>
 
     <dependencies>
+
         <!--SpringCloud consul discovery -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

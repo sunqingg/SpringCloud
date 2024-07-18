@@ -76,4 +76,12 @@ public class OrderController {
 
         return instances.get(0).getServiceId()+":"+instances.get(0).getPort();
     }
+
+    @GetMapping("/pay/nacos/{id}")
+    public String paymentInfo(@PathVariable("id") Integer id)
+    {
+        String result = restTemplate.getForObject("http://localhost:9001" + "/test/" + id, String.class);
+        return result+"\t"+"    我是OrderNacosController83调用者。。。。。。";
+    }
+
 }

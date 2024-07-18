@@ -1,0 +1,9 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: config-nacos-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
